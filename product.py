@@ -7,7 +7,7 @@ pk= Primary Key
 
 class Product():
     def __init__(self,category_id:int,title:str,short_description:str,description:str,slug:str,permalik:str,is_available:bool,
-    
+
                 sku:str,price:float,regular_price:float,sale_price:float,manage_stock:int,stock_quantity:int,is_visibla:bool,
         
                 date_created_gmt:str,date_modified_gmt:str):
@@ -35,6 +35,6 @@ class Product():
     def delete(self):
         pass
 
-    def remove(self):
+    def read(self):
         pass
         
