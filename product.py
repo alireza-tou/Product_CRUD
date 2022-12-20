@@ -40,7 +40,7 @@ class Product():
         pass
 
     def __repr__(self) :
-        print("""name : %s
+        return("""name : %s
         id : %d
         description : %s
         availability : %b
