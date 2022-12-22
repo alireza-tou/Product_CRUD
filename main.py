@@ -4,6 +4,3 @@ print(item1) # __str__
 print(Product.all_objects)#__repr__
 
 
-item1.update(title="asdssd")
-print(item1)
-print(item1.__dict__)

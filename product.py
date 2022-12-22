@@ -42,7 +42,7 @@ class Product():
 
 
     def __repr__(self)-> str:
-        return f"*****Product({self.category_id} ,{self.title} ,{self.short_description} ,{self.description} ,{self.slug} ,{self.permalik} ,{self.permalik} ,{self.is_available} ,{self.sku} ,{self.price} ,{self.regular_price} ,{self.sale_price} ,{self.manage_stock} ,{self.stock_quantity} ,{self.is_visibla} ,{self.date_created_gmt} ,{self.date_modified_gmt} )"
+        return f"Product({self.category_id} ,{self.title} ,{self.short_description} ,{self.description} ,{self.slug} ,{self.permalik} ,{self.permalik} ,{self.is_available} ,{self.sku} ,{self.price} ,{self.regular_price} ,{self.sale_price} ,{self.manage_stock} ,{self.stock_quantity} ,{self.is_visibla} ,{self.date_created_gmt} ,{self.date_modified_gmt} )"
 
     """
     def __repr__(self) :
@@ -58,4 +58,4 @@ class Product():
         self.regular_price,self.sale_price,self.date_created_gmt,self.date_modified_gmt))"""
         
     def __str__(self) -> str:
-        return f"/////({self.category_id} ,{self.title} ,{self.short_description} ,{self.description} ,{self.slug} ,{self.permalik} ,{self.permalik} ,{self.is_available} ,{self.sku} ,{self.price} ,{self.regular_price} ,{self.sale_price} ,{self.manage_stock} ,{self.stock_quantity} ,{self.is_visibla} ,{self.date_created_gmt} ,{self.date_modified_gmt} )"
+        return f"({self.category_id} ,{self.title} ,{self.short_description} ,{self.description} ,{self.slug} ,{self.permalik} ,{self.permalik} ,{self.is_available} ,{self.sku} ,{self.price} ,{self.regular_price} ,{self.sale_price} ,{self.manage_stock} ,{self.stock_quantity} ,{self.is_visibla} ,{self.date_created_gmt} ,{self.date_modified_gmt} )"
