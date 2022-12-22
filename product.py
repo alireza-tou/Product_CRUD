@@ -4,7 +4,8 @@ pk= Primary Key
 """
 
 class Product():
-    all_objects=[]
+    # ceating list to store all objects
+    all_objects=[] 
     def __init__(self,category_id:int,title:str,short_description:str,description:str,slug:str,permalink:str,is_available:bool,
 
                 sku:str,price:float,regular_price:float,sale_price:float,manage_stock:int,stock_quantity:int,is_visibla:bool,
@@ -28,6 +29,19 @@ class Product():
         self.is_visibla = is_visibla
         self.date_created_gmt = date_created_gmt
         self.date_modified_gmt = date_modified_gmt
+
+        # category_id check
+        assert self.category_id>0,"not valid category_id"
+
+        # price check
+        assert self.price>=0 ,"not valid price"
+        assert self.sale_price>=0,"not valid price"
+        assert self.regular_price>=0,"not valid price"
+
+        # stock check
+        assert self.manage_stock>=0 ,"stock can not be empty"
+        assert self.stock_quantity>=0,"quantity can not be empty"
+
 
     def read(self):
         print(self.__repr__())
