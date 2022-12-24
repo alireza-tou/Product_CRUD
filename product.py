@@ -5,14 +5,15 @@ pk= Primary Key
 
 class Product():
     # ceating list to store all objects
-    all_objects=[] 
+    ـall_objects=[] 
+
     def __init__(self,category_id:int,title:str,short_description:str,description:str,slug:str,permalink:str,is_available:bool,
 
                 sku:str,price:float,regular_price:float,sale_price:float,manage_stock:int,stock_quantity:int,is_visibla:bool,
         
                 date_created_gmt:str,date_modified_gmt:str):
         
-        Product.all_objects.append(self)
+        Product.ـall_objects.append(self)
         self.category_id =category_id
         self.title = title
         self.short_description = short_description
@@ -48,7 +49,7 @@ class Product():
 
     def delete(self):
         #del self
-        Product.all_objects.remove(self)
+        Product.ـall_objects.remove(self)
 
     def update(self,**kwrgs):
         for i in kwrgs.keys():
