@@ -1,8 +1,3 @@
-"""
-fk=Foreign Key
-pk= Primary Key
-"""
-
 class Product():
     # ceating list to store all objects
     ـall_objects=[] 
@@ -43,34 +38,45 @@ class Product():
         assert self.manage_stock>=0 ,"stock can not be empty"
         assert self.stock_quantity>=0,"quantity can not be empty"
 
-
-    def read(self):
+    #will read currunt instance
+    def read(self) -> str :
         print(self.__repr__())
 
-    def delete(self):
+
+    #will list all instances
+    """i prefer using classmethed expect staticmethod because of preventing 
+    from conflict maybe we will have severall class that have same methods 
+    """
+    @classmethod
+    def list_all(cls) -> str :
+        for i in Product.ـall_objects:
+            print(i.__repr__())
+
+
+
+    
+    def delete(self) -> None :
         #del self
         Product.ـall_objects.remove(self)
 
-    def update(self,**kwrgs):
+    def update(self,**kwrgs) -> None :
         for i in kwrgs.keys():
             setattr(self,i,kwrgs[i])
+
+    @classmethod
+    def update_by_id(cls,id,**kwrgs):
+        for i in Product.ـall_objects():
+            if getattr(i,cls.category_id)==id:
+                for j in kwrgs.keys():
+                    setattr(i,j,kwrgs[j])
+                break
+
+
 
 
     def __repr__(self)-> str:
         return f"Product({self.category_id} ,{self.title} ,{self.short_description} ,{self.description} ,{self.slug} ,{self.permalik} ,{self.permalik} ,{self.is_available} ,{self.sku} ,{self.price} ,{self.regular_price} ,{self.sale_price} ,{self.manage_stock} ,{self.stock_quantity} ,{self.is_visibla} ,{self.date_created_gmt} ,{self.date_modified_gmt} )"
 
-    """
-    def __repr__(self) :
-        return(\"""name : %s
-        id : %d
-        description : %s
-        availability : %b
-        regular price : %f
-        sale price : %f
-        date created : %s
-        date modified : %s
-        \"""%(self.title,self.category_id,self.description,self.is_available,
-        self.regular_price,self.sale_price,self.date_created_gmt,self.date_modified_gmt))"""
-        
+    
     def __str__(self) -> str:
         return f"({self.category_id} ,{self.title} ,{self.short_description} ,{self.description} ,{self.slug} ,{self.permalik} ,{self.permalik} ,{self.is_available} ,{self.sku} ,{self.price} ,{self.regular_price} ,{self.sale_price} ,{self.manage_stock} ,{self.stock_quantity} ,{self.is_visibla} ,{self.date_created_gmt} ,{self.date_modified_gmt} )"
