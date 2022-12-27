@@ -54,19 +54,23 @@ class Product():
 
 
 
-    
+    #delete current instance
     def delete(self) -> None :
         #del self
         Product.ـall_objects.remove(self)
 
+
+    #update current instance
     def update(self,**kwrgs) -> None :
         for i in kwrgs.keys():
             setattr(self,i,kwrgs[i])
 
+    #update by id
+    # i prefer to define this method as classmethod because updating by id does not relevant to specific instance 
     @classmethod
     def update_by_id(cls,id,**kwrgs):
-        for i in Product.ـall_objects():
-            if getattr(i,cls.category_id)==id:
+        for i in Product.ـall_objects:
+            if i.category_id==id:
                 for j in kwrgs.keys():
                     setattr(i,j,kwrgs[j])
                 break
