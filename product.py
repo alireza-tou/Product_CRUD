@@ -38,12 +38,14 @@ class Product():
         assert self.manage_stock>=0 ,"stock can not be empty"
         assert self.stock_quantity>=0,"quantity can not be empty"
 
+
+
     #will read currunt instance
     def read(self) -> str :
         print(self.__repr__())
 
 
-    #will list all instances
+    #will list(read) all instances
     """i prefer using classmethed expect staticmethod because of preventing 
     from conflict maybe we will have severall class that have same methods 
     """
@@ -51,13 +53,6 @@ class Product():
     def list_all(cls) -> str :
         for i in Product.ـall_objects:
             print(i.__repr__())
-
-
-
-    #delete current instance
-    def delete(self) -> None :
-        #del self
-        Product.ـall_objects.remove(self)
 
 
     #update current instance
@@ -74,6 +69,21 @@ class Product():
                 for j in kwrgs.keys():
                     setattr(i,j,kwrgs[j])
                 break
+
+
+
+    #delete current instance
+    def delete(self) -> None :
+        #del self
+        Product.ـall_objects.remove(self)
+
+    @classmethod
+    def delete_all(cls):
+        Product.ـall_objects.clear()
+        
+
+
+
 
 
 
